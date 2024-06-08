@@ -8,5 +8,6 @@ RUN git clone --depth 1 https://github.com/kcarsey/python-projects.git .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+COPY first-flask-api/app.py .
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:gunicorn_app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5500", "app:gunicorn_app"]
